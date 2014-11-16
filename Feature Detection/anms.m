@@ -1,4 +1,4 @@
-function [y,x,rmax]=anms(cimg,max_pts)
+function [y,x,row,col,rmax]=anms(cimg,max_pts)
 %Written by Shangyi
 %Adaptive Non-maxima Suppression
 %cimg harris-score image
