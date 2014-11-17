@@ -71,13 +71,12 @@ To recognize objects (various kinds of ball in our project) in the given images,
 
 This work presents an idea of objects recognition. We decided to use images of four kinds of balls from Caltech 256(Griffin, G. Holub, AD. Perona, P.) as our dataset, which contains 98 images of golf in the folder ``088.golf-ball'', 174 in ``193.soccer-ball'', 104 in ``017.bowling-ball'' and 98 in ``216.tennis-ball''.\\
 The task is challenging in the following aspects:\\
-
-1. The objects with the same label can have very different colors, sizes and textures.\\
-2. The objects we want to classify may not be the main parts in the image, sometimes with even other spherical objects
+1.\ The objects with the same label can have very different colors, sizes and textures.\\
+2.\ The objects we want to classify may not be the main parts in the image, sometimes with even other spherical objects
 such as a bowling-ball with a head in ``017.bowling-ball$ \verb|\|$017\_0006.jpg''.\\
-3. \texttt{T}he objects may not have high contrast against the surroundings, such as a white soccer-ball in a bright background in ''193.soccer-ball $ \verb|\|$193\_0070.jpg''.\\
-4. It's possible that several objects with the same label are in one image (such as ``193.soccer-ball $ \verb|\|$ 193\_0171.jpg'').\\
-5. Some images are even hard for humans to classify, such as ``017.bowling-ball $ \verb|\|$ 193\_0155.jpg", which has the color of a typical tennis ball but the pattern of pentagon and hexagon on a soccer ball.\\
+3.\ The objects may not have high contrast against the surroundings, such as a white soccer-ball in a bright background in ''193.soccer-ball $ \verb|\|$193\_0070.jpg''.\\
+4.\ It's possible that several objects with the same label are in one image (such as ``193.soccer-ball $ \verb|\|$ 193\_0171.jpg'').\\
+5.\ Some images are even hard for humans to classify, such as ``017.bowling-ball $ \verb|\|$ 193\_0155.jpg", which has the color of a typical tennis ball but the pattern of pentagon and hexagon on a soccer ball.\\
 
 
 \section{Model Details} 
