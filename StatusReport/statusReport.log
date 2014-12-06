@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2014.5.24)  17 NOV 2014 21:04
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2014.5.24)  17 NOV 2014 21:13
 entering extended mode
 **statusReport.tex
 ("F:\course\Upenn\CIS 519\Final\onlinefile\StatusReport\statusReport.tex"
@@ -302,9 +302,6 @@ LaTeX Info: Redefining \nameref on input line 44.
 \@outlinefile=\write3
 
 
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 63.
 
@@ -372,10 +369,10 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 150.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
- 6822 strings out of 430478
- 91707 string characters out of 3191202
- 185469 words of memory out of 3000000
- 9926 multiletter control sequences out of 15000+200000
+ 6821 strings out of 430478
+ 91685 string characters out of 3191202
+ 185480 words of memory out of 3000000
+ 9925 multiletter control sequences out of 15000+200000
  8273 words of font info for 23 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  32i,11n,45p,691b,572s stack positions out of 5000i,500n,10000p,200000b,50000s
