@@ -8,12 +8,15 @@
 clear
 clc
 
-display = 1;
-dirstruct = dir( '*jpg' );
+display = 0;
+dirstruct = dir( 'Patches\Bowling\*jpg' );
+addpath('Patches\Bowling\');
 imNum = length(dirstruct);
 imGray = cell( imNum,1 );
 imHOG = cell( imNum,1 );
 imHOG_vis = cell( imNum,1 );
+x = zeros( imNum, 900);
+y = ones( imNum, 1);
 % imGradient = cell( imNum );
 % gx = [1 0 1];
 % gy = [1 0 1]';
@@ -35,7 +38,8 @@ for i =1: imNum
 %     imGradient{i} = Gmag;
 
     % HOG 
-    [ imHOG{i}, imHOG_vis{i} ] = extractHOGFeatures( im, 'CellSize', [ 8, 8 ], 'BlockSize', [ 2, 2 ], 'NumBins', 9, 'UseSignedOrientation', false);
+    [ imHOG{i}, imHOG_vis{i} ] = extractHOGFeatures( im, 'CellSize', [ 6, 6 ], 'BlockSize', [ 2, 21 ], 'NumBins', 9, 'UseSignedOrientation', false);
+    features(i,:) = im
 end
 
 if display == 1
@@ -45,7 +49,8 @@ if display == 1
         imshow( imGray{i} )
         title('Origin')
         hold on 
-        plot 
+        plot(imHOG_vis{i})
+        hold off
 %         subplot( 2, imNum, i + imNum)
 %         imshow(imGradient{i})
 %         title('Gradient')
