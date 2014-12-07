@@ -9,15 +9,15 @@ clear
 clc
 
 display = 0;
-dirstruct = dir( 'Patches\Tennis\*jpg' );
-addpath('Patches\Tennis\');
+dirstruct = dir( 'Patches\Soccer\*jpg' );
+addpath('Patches\Soccer\');
 
 imNum = length(dirstruct);
 imGray = cell( imNum,1 );
 imHOG = cell( imNum,1 );
 imHOG_vis = cell( imNum,1 );
 x = zeros( imNum, 900);
-y = zeros( imNum, 1)+2;
+y = zeros( imNum, 1)+3;
 % imGradient = cell( imNum );
 % gx = [1 0 1];
 % gy = [1 0 1]';
