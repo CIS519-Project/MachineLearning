@@ -45,7 +45,7 @@ else
         p(i) = prediction + model.b;
     end
 end
-
+%p = p/max(p);
 % Convert predictions into 0 / 1
 pred(p >= 0) =  1;
 pred(p <  0) =  0;

@@ -1,4 +1,4 @@
-function [model] = svmTrain(X, Y, C, kernelFunction, ...
+function [model] = svmTrain(X, Y, C, kernelFunction, className,...
                             tol, max_passes)
 %SVMTRAIN Trains an SVM classifier using a simplified version of the SMO 
 %algorithm. 
@@ -188,5 +188,6 @@ model.kernelFunction = kernelFunction;
 model.b= b;
 model.alphas= alphas(idx);
 model.w = ((alphas.*Y)'*X)';
+model.className = className;
 
 end
