@@ -16,14 +16,15 @@ addpath('data\088.golf-ball\')
 addpath('data\216.tennis-ball\')
 
 savedir = 'Patches/Bowling/';
-Num = 0;
+Num = 0;       % Also need to change the save num to continue
 Label = 'Bowling';
 PatchSize = [40 40];
-moveRatio=0.1;
+moveRatio=0.05;
 dirstruct=dir('data\017.bowling-ball\*jpg');
+continueNum=1;  %Change the num to continue interruptrd program
 
-for i = 1:length(dirstruct)
-    im = im2double( imread( dirstruct(1).name ) );
+for i = continueNum:length(dirstruct)
+    im = im2double( imread( dirstruct(i).name ) );
     Y = size(im,1);
     X = size(im,2);
     nextImage = 0;
