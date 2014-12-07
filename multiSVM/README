@@ -1,0 +1,32 @@
+Modified by Chenyang Zhao, Dec 7th,2014
+
+Extend one class SVM to multi-class SVM
+Implmented ROCcurve for multi-class problems
+
+function multiSVMfit:
+	input: 
+		X: n-by-d matrix includes training data
+		Y: n-by-1 vector of labels of training data(could be any type)
+	output: 
+		cl: a 1-by-k cell includes svm-classifiers for different lables, where k = length(unique(Y))
+Please modify this .m file to change the kernel (gaussianKernel or linearKernel). 
+
+
+
+function multiSVMpredict:
+	input:
+		cl: a cell includes several svm-classifiers for different lables
+		X: n-by-d matrix includes training data
+	output： 
+		pred: predictions given by multi-class svm classifier, n-by-1 matrix
+		score: unnormalized prediction score for each class, n-by-k, where score(i,j) indicates the score of instance i being predicted as class j
+
+function plotROC:
+	input:
+		labels: true labels of instances, n-by-1 vector
+		scores: n-by-k matrix,
+		cl: cell including the classifiers
+		colors: a string colors of the ROC curves for different labels, ex. 'rgb'
+		
+
+

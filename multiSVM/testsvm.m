@@ -29,12 +29,15 @@ d = 0.02;
 [x1Grid,x2Grid] = meshgrid(min(data(:,1)):d:max(data(:,1)),...
      min(data(:,2)):d:max(data(:,2)));
 xGrid = [x1Grid(:),x2Grid(:)];
-[test,scores] = multiSVMpredict(cl,xGrid);
+[test,~] = multiSVMpredict(cl,xGrid);
 h = gscatter(data(:,1),data(:,2),y,'rbg','.');
 figure;
 h2 = gscatter(xGrid(:,1),xGrid(:,2),test,'rbgy','.');
 hold on;
 h = gscatter(data(:,1),data(:,2),y,'rbg','o');
+
+[test,scores] = multiSVMpredict(cl,data);
+plotROC(y,scores,cl,'rgb');
 
 % C = 1; sigma = 0.1;
 % ytemp = double((y==1));
