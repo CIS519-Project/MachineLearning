@@ -4,15 +4,18 @@ clc
 
 load('all.mat');
 
+X = reduceDimension(X, 50);
 L = length( Y );
 idx = randsample( L, L);
 X = X(idx, :);
 Y = Y(idx);
 
-trainRatio = 0.5;
+trainRatio = 0.6;
 num = round( trainRatio * L );
 Xtrain = X( 1:num, :);
+% Xtrain = reduceDimension(Xtrain, 50);
 Xtest = X( num+1:end, : );
+% Xtest = reduceDimension(Xtest, 50);
 Ytrain = Y(1:num);
 Ytest = Y(num+1:end);
 

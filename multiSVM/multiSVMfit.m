@@ -1,7 +1,7 @@
 function cl = multiSVMfit(X,Y,varargin)
 
-    C = 0.01;
-    sigma = 1.5;
+    C = 1;
+    sigma = 1;
 
     classTypes = unique(Y);
     %classTypes
