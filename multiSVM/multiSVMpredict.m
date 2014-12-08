@@ -9,7 +9,7 @@ function [prediction,score] = multiSVMpredict(cl,X)
     end
     className(classLength+1) = 0;
     noneClass = all(score<0,2);
-    any(noneClass)
+    any(noneClass);
         
     [~,I] = max(score,[],2);
     prediction = className(I);
