@@ -9,7 +9,7 @@ idx = randsample( L, L);
 X = X(idx, :);
 Y = Y(idx);
 
-trainRatio = 0.6;
+trainRatio = 1;
 num = round( trainRatio * L );
 Xtrain = X( 1:num, :);
 Xtest = X( num+1:end, : );
@@ -21,7 +21,7 @@ X_std = std( Xtrain,1 );
 Xtrain = bsxfun( @rdivide, bsxfun(@minus, Xtrain, X_mean), X_std);
 Xtest = bsxfun( @rdivide, bsxfun( @minus, Xtest, X_mean), X_std);
 %%%%%%%%%%%%%%%%%
-sigma = [ 0.5, 0.75, 1, 1.5 , 2 , 2.5 ,3, 3.5, 4, 5];
+sigma = 1.5;
 n = length( sigma );
 tic
 model = multiSVMfit_GridSearch( Xtrain, Ytrain, sigma);
