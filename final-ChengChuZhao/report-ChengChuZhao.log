@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.2)  8 DEC 2014 02:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.2)  8 DEC 2014 16:06
 entering extended mode
 **report-ChengChuZhao.tex
 (F:\Upenn\CIS519\Project\final-ChengChuZhao\report-ChengChuZhao.tex
@@ -318,68 +318,79 @@ Overfull \hbox (5.1225pt too wide) in paragraph at lines 65--65
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
-<Analysis_of_Available_Data.jpg, id=4, 439.6425pt x 362.85562pt>
-File: Analysis_of_Available_Data.jpg Graphic file (type jpg)
 
-<use Analysis_of_Available_Data.jpg>
-Package pdftex.def Info: Analysis_of_Available_Data.jpg used on input line 77.
-(pdftex.def)             Requested size: 195.126pt x 161.04114pt.
+LaTeX Warning: Reference `fig:ROCSelection' on page 1 undefined on input line 7
+1.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 77.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 77.
 
-
-
-Package natbib Warning: Citation `crd' on page 1 undefined on input line 89.
+Package natbib Warning: Citation `crd' on page 1 undefined on input line 82.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
+Underfull \hbox (badness 1038) in paragraph at lines 81--83
+[]\OT1/ptm/m/n/10 Before we use HOG to ex-trac-t fea-tures from la-beled
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
 
-[1{D:/应用程序/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd
-}}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{D:/应用程序/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sf
+d}}
 
 
 
- <F:/Upenn/CIS519/Project/final-ChengChuZhao/Analysis_of_Available_Data.jpg>] <
-CornerDetection.jpg, id=21, 656.4525pt x 230.8625pt>
+]
+<CornerDetection.jpg, id=20, 656.4525pt x 230.8625pt>
 File: CornerDetection.jpg Graphic file (type jpg)
 
 <use CornerDetection.jpg>
-Package pdftex.def Info: CornerDetection.jpg used on input line 93.
+Package pdftex.def Info: CornerDetection.jpg used on input line 86.
 (pdftex.def)             Requested size: 195.126pt x 68.62167pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 98.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 98.
 
 
-Package natbib Warning: Citation `cird' on page 2 undefined on input line 98.
+Package natbib Warning: Citation `cird' on page 2 undefined on input line 91.
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 98--99
+Underfull \hbox (badness 1019) in paragraph at lines 91--92
 \OT1/ptm/m/n/10 set. One of the ro-bustest ap-proach is Cir-cle Hough
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-<circleDetection.jpg, id=28, 426.84468pt x 252.945pt>
+<circleDetection.jpg, id=27, 426.84468pt x 252.945pt>
 File: circleDetection.jpg Graphic file (type jpg)
 
 <use circleDetection.jpg>
-Package pdftex.def Info: circleDetection.jpg used on input line 102.
+Package pdftex.def Info: circleDetection.jpg used on input line 95.
 (pdftex.def)             Requested size: 195.126pt x 115.63435pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--124
 
- []
+Package natbib Warning: Citation `ROIResult' on page 2 undefined on input line 
+100.
 
-(F:\Upenn\CIS519\Project\final-ChengChuZhao\report-ChengChuZhao.bbl [2 <F:/Upen
-n/CIS519/Project/final-ChengChuZhao/CornerDetection.jpg> <F:/Upenn/CIS519/Proje
-ct/final-ChengChuZhao/circleDetection.jpg>])
+<ROISelection.jpg, id=28, 353.82187pt x 408.77719pt>
+File: ROISelection.jpg Graphic file (type jpg)
+ <use ROISelection.jpg>
+Package pdftex.def Info: ROISelection.jpg used on input line 103.
+(pdftex.def)             Requested size: 195.126pt x 225.43317pt.
+
+(F:\Upenn\CIS519\Project\final-ChengChuZhao\report-ChengChuZhao.bbl
+Underfull \vbox (badness 2680) has occurred while \output is active []
+
+ [2 <F:/Upenn/CIS519/Project/final-ChengChuZhao/CornerDetection.jpg> <F:/Upenn/
+CIS519/Project/final-ChengChuZhao/circleDetection.jpg> <F:/Upenn/CIS519/Project
+/final-ChengChuZhao/ROISelection.jpg>])
 
 Package natbib Warning: There were undefined citations.
 
@@ -393,27 +404,30 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `report-ChengChuZhao.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 5844 strings out of 495354
- 84468 string characters out of 3183132
- 177542 words of memory out of 3000000
- 8941 multiletter control sequences out of 15000+200000
+ 5819 strings out of 495354
+ 84220 string characters out of 3183132
+ 175572 words of memory out of 3000000
+ 8917 multiletter control sequences out of 15000+200000
  19378 words of font info for 34 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,11n,45p,1031b,574s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,45p,1332b,414s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/应用程序/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<D:/应用程序
 /CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/应用程序/CTEX/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/应用程序/CTEX/MiKTeX/font
 s/type1/public/amsfonts/cm/cmr10.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pf
-b><D:/应用程序/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/应用程�
-�/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/应用程序/CTEX/MiKTeX/fon
-ts/type1/urw/times/utmri8a.pfb>
-Output written on report-ChengChuZhao.pdf (3 pages, 316301 bytes).
+ublic/amsfonts/cm/cmsy10.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/urw/times
+/utmb8a.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/�
+��用程序/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/应用程序/CTEX/
+MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report-ChengChuZhao.pdf (3 pages, 306685 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
+ 84 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
