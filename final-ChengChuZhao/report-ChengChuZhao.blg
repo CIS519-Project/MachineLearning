@@ -14,47 +14,46 @@ Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." 
 while executing---line 1434 of file icml2014.bst
 Warning--empty journal in cirDetect3
 Warning--empty journal in SVMforRecogintion
-Warning--empty journal in HogDetection1
 Warning--empty journal in cirDetect2
-You've used 7 entries,
+You've used 6 entries,
             2773 wiz_defined-function locations,
-            635 strings with 5896 characters,
-and the built_in function-call counts, 3632 in all, are:
-= -- 356
-> -- 101
-< -- 15
-+ -- 37
-- -- 30
-* -- 217
-:= -- 490
-add.period$ -- 23
-call.type$ -- 7
-change.case$ -- 31
-chr.to.int$ -- 7
-cite$ -- 19
-duplicate$ -- 210
-empty$ -- 333
-format.name$ -- 39
-if$ -- 839
+            630 strings with 5792 characters,
+and the built_in function-call counts, 3161 in all, are:
+= -- 310
+> -- 91
+< -- 13
++ -- 33
+- -- 27
+* -- 192
+:= -- 427
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 27
+chr.to.int$ -- 6
+cite$ -- 16
+duplicate$ -- 181
+empty$ -- 288
+format.name$ -- 35
+if$ -- 729
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 7
-newline$ -- 43
-num.names$ -- 28
-pop$ -- 80
+missing$ -- 6
+newline$ -- 38
+num.names$ -- 24
+pop$ -- 69
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 21
 quote$ -- 0
-skip$ -- 181
+skip$ -- 156
 stack$ -- 0
-substring$ -- 218
-swap$ -- 69
-text.length$ -- 9
+substring$ -- 188
+swap$ -- 60
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 77
-warning$ -- 5
-while$ -- 37
+type$ -- 66
+warning$ -- 4
+while$ -- 32
 width$ -- 0
-write$ -- 97
+write$ -- 85
 (There were 4 error messages)

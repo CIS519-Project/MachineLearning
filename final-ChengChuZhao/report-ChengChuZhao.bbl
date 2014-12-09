@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -32,11 +32,6 @@ D'Orazio~T., Guaragnella~C., Leo M. Distante~A.
 Massimiliano~P., Alessandro~V.
 \newblock Support vector machines for 3d object recogintion.
 \newblock pp.\  637--646, 1998.
-
-\bibitem[Navneet~D.(2005)]{HogDetection1}
-Navneet~D., Bill~T.
-\newblock Histograms of oriented gradients for human detection.
-\newblock pp.\  886--893, 2005.
 
 \bibitem[Victor~A.(2006)]{cirDetect2}
 Victor~A., Carlos~H.G., Arturo P. Raul~E.S.
