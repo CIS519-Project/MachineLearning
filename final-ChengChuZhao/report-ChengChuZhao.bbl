@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -37,5 +37,12 @@ Massimiliano~P., Alessandro~V.
 Victor~A., Carlos~H.G., Arturo P. Raul~E.S.
 \newblock Circle detection on images using genetic algorithms.
 \newblock pp.\  652--657, 2006.
+
+\bibitem[Viola \& Jones(2001)Viola and Jones]{viola2001rapid}
+Viola, Paul and Jones, Michael.
+\newblock Rapid object detection using a boosted cascade of simple features.
+\newblock In \emph{Computer Vision and Pattern Recognition, 2001. CVPR 2001.
+  Proceedings of the 2001 IEEE Computer Society Conference on}, volume~1, pp.\
+  I--511. IEEE, 2001.
 
 \end{thebibliography}
