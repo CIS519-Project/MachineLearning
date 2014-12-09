@@ -167,6 +167,48 @@ Once classifier was trained, balls could be detected from the new input image ba
 \section{Further Work}
 Although our current Gaussian SVM detector is reasonably accurate for the cropped patches (test part of manually cropped ROI), there is still a problem when test thousands of test instances extracted from new input image (downloaded from other sources). False positive results were the main problem we encountered. The most likely explanation for this problem we believe is the insufficiency of the datasets, especially in the negative sets ('Unknown'). Also the original datasets for each kind ball is limited, the cropped patches generated based on the original datasets may be not representative. It would be useful to use a larger datasets to improve detector accuracy and implement cascade training method to improve the training efficiency.  
 
+\ref{sample-table}.
+% Note use of \abovespace and \belowspace to get reasonable spacing
+% above and below tabular lines.
+
+
+\begin{table}[t]
+\caption{Confusion Matrix: B for Bolwing, G for Golf, S for Soccer, T for Tennis and U for Unknown}
+\label{sample-table}
+\vskip 0.15in
+\begin{center}
+\begin{small}
+\begin{sc}
+\tabcolsep 0.05in 
+\begin{tabular}{lcccccr}
+
+
+\hline
+\abovespace\belowspace
+True Label & B & G & S & T & U & Precision \\
+\hline
+\abovespace
+Prediction &   &   &   &    &   &   \\
+Bowling    & 234 & 3 & 4 & 2 &0 & 0.96 \\ 
+Golf & 21 & 357 & 10 & 7 &10 &0.88\\
+Soccer & 12 & 1 & 393 & 0&1 &0.97   \\
+Tennis   & 6 & 3 & 4 & 285&1&0.96       \\
+Unknown   & 1 & 1 & 0&0 & 474&0.96       \\
+%\belowspace
+\hline
+\abovespace
+Recall    & 0.86 & 0.98 & 0.96 & 0.97& 0.97 \\
+Accuracy &0.95   &   &   &    &   &   \\
+\hline
+\end{tabular}
+\end{sc}
+\end{small}
+\end{center}
+\vskip -0.1in
+\end{table}
+
+
+
 
 \section*{Acknowledgments} 
 This project is supported by Uenn CIS 519. Thanks Eric Eaton and Xiaoxiang Hu for their instruction. Thanks MATLAB for providing so many useful toolboxes.
