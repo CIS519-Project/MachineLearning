@@ -15,45 +15,45 @@ while executing---line 1434 of file icml2014.bst
 Warning--empty journal in cirDetect3
 Warning--empty journal in SVMforRecogintion
 Warning--empty journal in cirDetect2
-You've used 6 entries,
+You've used 7 entries,
             2773 wiz_defined-function locations,
-            630 strings with 5792 characters,
-and the built_in function-call counts, 3161 in all, are:
-= -- 310
-> -- 91
-< -- 13
-+ -- 33
-- -- 27
-* -- 192
-:= -- 427
-add.period$ -- 20
-call.type$ -- 6
-change.case$ -- 27
-chr.to.int$ -- 6
-cite$ -- 16
-duplicate$ -- 181
-empty$ -- 288
-format.name$ -- 35
-if$ -- 729
+            636 strings with 6028 characters,
+and the built_in function-call counts, 3700 in all, are:
+= -- 364
+> -- 112
+< -- 16
++ -- 40
+- -- 33
+* -- 230
+:= -- 501
+add.period$ -- 24
+call.type$ -- 7
+change.case$ -- 32
+chr.to.int$ -- 7
+cite$ -- 18
+duplicate$ -- 209
+empty$ -- 337
+format.name$ -- 44
+if$ -- 853
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 6
-newline$ -- 38
-num.names$ -- 24
-pop$ -- 69
+missing$ -- 7
+newline$ -- 43
+num.names$ -- 28
+pop$ -- 80
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 25
 quote$ -- 0
-skip$ -- 156
+skip$ -- 178
 stack$ -- 0
-substring$ -- 188
-swap$ -- 60
-text.length$ -- 8
+substring$ -- 212
+swap$ -- 68
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 77
 warning$ -- 4
-while$ -- 32
+while$ -- 38
 width$ -- 0
-write$ -- 85
+write$ -- 100
 (There were 4 error messages)

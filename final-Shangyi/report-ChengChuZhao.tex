@@ -131,7 +131,7 @@ HOG features is shown in figure \ref{fig:HOGtest}. After extract HOG features fr
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.4\textwidth]{HOGtest.jpg}
+\includegraphics[width=0.4\textwidth]{hogtest.jpg}
 \caption{HOG Feature Extraction Result}
 \label{fig:HOG}
 \end{figure}
@@ -161,11 +161,11 @@ The number of features we get using HOG is $900$. Since the number of instances 
 %\end{algorithm}\\
 
 \subsection{Detect Balls from New Image}
-Once classifier was trained, balls could be detected from the new input image based on the predict results. In order to detect the balls, the algorithm should search every possible detect window in the image. So square detect window with changeable size move around in the image to extract test patches. Window size changes from minimum value (80 pixels or 10 percent of maximum side) to maximum value ( small one between image width and height). And overlapping ratio between two consecutive detect windows is 85 percent.  Every patch is resized to 40x40 pixels, extracted HOG features, and normalized in the same way with training data. Following this, apply classifier to predict labels for test instances. Based on the predict results, overlap test instances can be eliminated by adaptive non-maximum suppression. A neighbor positive detection threshold is set to improve the detection result. 
- 
+Once classifier was trained, balls could be detected from the new input image based on the predict results. \\
+In order to detect the balls, the algorithm should search every possible detect window in the image. So square detect window with changeable size move around in the image to extract test patches. Window size changes from minimum value (80 pixels or 10 percent of maximum side) to maximum value ( small one between image width and height). And overlapping ratio between two consecutive detect windows is 85 percent.  Every patch is resized to 40x40 pixels, extracted HOG features, and normalized in the same way with training data. Following this, apply classifier to predict labels for test instances. Based on the predict results, overlap test instances can be eliminated by adaptive non-maximum suppression. A neighbour positive detection threshold is set to improve the detection result.
 
-\section{Further Work}
-Although our current Gaussian SVM detector is reasonably accurate for the cropped patches (test part of manually cropped ROI), there is still a problem when test thousands of test instances extracted from new input image (downloaded from other sources). False positive results were the main problem we encountered. The most likely explanation for this problem we believe is the insufficiency of the datasets, especially in the negative sets ('Unknown'). Also the original datasets for each kind ball is limited, the cropped patches generated based on the original datasets may be not representative. It would be useful to use a larger datasets to improve detector accuracy and implement cascade training method to improve the training efficiency.  
+
+ 
 
 \ref{sample-table}.
 % Note use of \abovespace and \belowspace to get reasonable spacing
