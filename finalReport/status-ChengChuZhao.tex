@@ -87,15 +87,19 @@ J(\alpha) = \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \alpha_i
 \end{equation}
 s.t. $\alpha_i\leq 0 \forall i$, $\sum_i \alpha_iy_i = 0$,
 where $\alpha_i$ is the constraints weight scaler, and $\langle x_i,x_j \rangle$ is a scaler given by the kernel function.\\
-While applying SVM algorithm, choosing proper kernel is essential to train the classifier. We used two different kernels to train the dataset, which are Gaussian kernel, linear kernel, and drew the Receiver	Operating Characteristic(ROC) curve respectively. The result are shown in the figure (\ref{fig:ROC}). As shown in the figure, the Gaussian kernel gives better prediction.\\
+While applying SVM algorithm, choosing proper kernel is essential to train the classifier. We used two different kernels to train the dataset, which are Gaussian kernel, linear kernel, and drew the Receiver	Operating Characteristic(ROC) curve respectively. The result are shown in the figure (\ref{fig:ROC1},\ref{fig:ROC2}). As shown in the figure, the two kernels give similar result while Gaussian kernel provides a faster speed to converge.\\
 \begin{figure}[htb]
 \centering
 \includegraphics[width = 0.4\textwidth]{ROCgauss.jpg}
+\caption{ROC curve of SVM with Gaussian Kernel}
+\label{fig:ROC1}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width = 0.4\textwidth]{ROClinear.jpg}
+\caption{ROC curve of SVM with Linear Kernel}
+\label{fig:ROC2}
 \end{figure}
 \subsection{Multi-Class SVM}
 Traditional SVM algorithm only solves 2-classes problems. However, detecting ball object in a image should be able to tell whether there is a ball and figure out the type of the ball object, which is a multi-class classification problem. Therefore, one-vs-rest is introduced for solving multi-class problem.\\
