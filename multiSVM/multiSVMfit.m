@@ -2,7 +2,6 @@ function cl = multiSVMfit(X,Y,kernelType)
 
     C = 0.01;
     sigma = 4;
-    d = 2;
 
     classTypes = unique(Y);
     %classTypes
@@ -16,5 +15,8 @@ function cl = multiSVMfit(X,Y,kernelType)
                 cl{i} = svmTrain(X,Ytemp,C,@linearKernel,classTypes(i),1e-4,20);
             case 'Poly'
                 cl{i} = svmTrain(X,Ytemp,C,@(x1,x2) polyKernel(x1,x2,d),classTypes(i),1e-4,20);
+        end
+        cl{i} = svmTrain(X,Ytemp,C,@(x1,x2) gaussianKernel(x1,x2,sigma),classTypes(i), 1e-3, 50);
+%         cl{i} = svmTrain(X,Ytemp,C,@linearKernel,classTypes(i), 1e-3, 20);
     end
 end

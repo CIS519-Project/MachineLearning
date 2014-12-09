@@ -25,7 +25,7 @@ X_test = bsxfun(@rdivide, bsxfun(@minus,Xtest,X_mean),X_std);
 
 %% multiSVM
 tic;
-%clGauss = multiSVMfit(X_train,Ytrain,'Gauss');
+clGauss = multiSVMfit(X_train,Ytrain,'Gauss');
 toc
 disp('Gaussian completed');
 tic
@@ -41,13 +41,10 @@ for i=1:5
     
     %[pred,scoresGauss] = multiSVMpredict(clGauss,X_test);
     %acc = sum(pred(:)==Ytest(:))/length(Ytest)
-    %[~,scoresGauss] = multiSVMpredict(clGauss,X_train);
-    
+    [~,scoresGauss] = multiSVMpredict(clGauss,X_train);
     %[~,scoresGauss] = svmPredict(clGauss{i},X_test);
-    %[~,scoresLinear] = svmPredict(clLinear{i},X_test);
-
-
-    [~,scoresLinear] = multiSVMpredict(clLinear{i},X_test);
+    [~,scoresLinear] = svmPredict(clLinear{i},X_test);
+    %[~,scoresLinear] = multiSVMpredict(clLinear{i},X_test);
     %[~,scoresPoly] = multiSVMpredict(clPoly,X_test);
 
     %pred_train = multiSVMpredict(cl,X_train);
@@ -56,16 +53,16 @@ for i=1:5
     %train_accuracy = sum(pred_train'==Ytrain)/length(Ytrain);
     %figure(1)
     
-    %h1{i} = plotROC(Ytest,scoresGauss,clGauss,'rgbyk');
-    figure(1);
-    string = 'rgbyk'
+    h1{i} = plotROC(Ytest,scoresGauss,clGauss,'rgbyk');
+    %figure(1);
+    %string = 'rgbyk'
     %h1{i} = plotROC(double(Ytest == clGauss{i}.className),scoresGauss,clGauss,string(i));
-    hold on;
+    %hold on;
     %hold on;
     %figure(2)
 
-    %h2{i} = plotROC(Ytest,scoresLinear,clLinear,'rgbyk');
-    h1{i} = plotROC(double(Ytest == clLinear{i}.className),scoresLinear,clLinear,string(i));
+    h2{i} = plotROC(Ytest,scoresLinear,clLinear,'rgbyk');
+    %h1{i} = plotROC(double(Ytest == clLinear{i}.className),scoresLinear,clLinear,string(i));
 
     %hold on;
     %h3 = plotROC(Ytest,scoresPoly,clPoly,'rgbyk');

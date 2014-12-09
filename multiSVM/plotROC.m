@@ -8,7 +8,7 @@ else
     newscore(:,1) = (scores(:,1)-min(scores(:,1)));%/(max(scores(:,1))-min(scores(:,1)));
     %newscore(:,2) = newscore(:,1);
 end
-figure(1);
+figure();
 axis([]);
 hold on;
 classType = unique(labels);
@@ -21,8 +21,8 @@ for i=1:length(classType)
     [X,Y,T,AUC] = perfcurve(templabels,newscore(:,i),1);
     h(i) = plot(X,Y,colors(i),'LineWidth',3);
     legends{i} = strcat('ROC plot for class ',num2str(cl{i}.className));
-    %texts{i} = text(0.8,0.3-0.05*i,strcat('AUC of class ',num2str(cl{i}.className),'=',num2str(AUC)));
-    %set(texts{i},'FontSize',22,'FontWeight','bold');
+    texts{i} = text(0.8,0.3-0.05*i,strcat('AUC of class ',num2str(cl{i}.className),'=',num2str(AUC)));
+    set(texts{i},'FontSize',22,'FontWeight','bold');
 end
 hold off;
 legend(h,legends);

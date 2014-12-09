@@ -80,7 +80,13 @@ Primary tasks for this project:
 \section{SVM learning}
 Support vector machine(SVM) is one of basic learning algorithm that most widely used to solve object recognition problems[\textbf{ADD SEVERAL PAPERS HERE}]. In our case, we applied one-class SVM first and extend it to multi-class to train the dataset with several different labels.
 \subsection{One-Class SVM}
-Given a set of instances which belongs to either of two classes, a SVM classifier finds the optimal hyperplane leaving the largest possible fraction of instances of the same class on the same side, while maximize the distance of either class from hyperplane, by maximize the 
+Given a set of instances which belongs to either of two classes, a SVM classifier finds the optimal hyperplane leaving the largest possible fraction of instances of the same class on the same side, while maximize the distance of either class from hyperplane, by maximize the $J(\alpha)$ in \ref{eq:Jfunc}.
+\begin{equation}
+J(\alpha) = \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \alpha_i \alpha_jy_iy_j\langle x_i,x_j\rangle
+\label{eq:Jfunc}
+\end{equation}
+s.t. $\alpha_i\leq 0 \forall i$, $\sum_i \alpha_iy_i = 0$,
+where $\alpha_i$ is the constraints weight scaler, and $\langle x_i,x_j \rangle$ is a scaler given by the kernel function.\\
 While applying SVM algorithm, choosing proper kernel is essential to train the classifier. We used two different kernels to train the dataset, which are Gaussian kernel, linear kernel, and drew the Receiver	Operating Characteristic(ROC) curve respectively. The result are shown in the figure (\textbf{ADD ROC FIGURE FOR ONE CLASS SVM HERE}). As shown in the figure, the Gaussian kernel gives better prediction. 
 \subsection{Multi-Class SVM}
 Traditional SVM algorithm only solves 2-classes problems. However, detecting ball object in a image should be able to tell whether there is a ball and figure out the type of the ball object, which is a multi-class classification problem. Therefore, one-vs-rest is introduced for solving multi-class problem.\\
