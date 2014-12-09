@@ -108,8 +108,13 @@ Given a dataset with $k$ different labels, $k$ different one-class SVM classifie
 
 \section{result}
 \subsection{Learning Curve}
-To evaluate our SVM classifier, we run our classifier through 10-fold cross validation and drew the learning curve in figure (\ref{fig:learning curve}) to show the performance versus the number of training examples. 
-
+To evaluate our SVM classifier, we run our classifier through 10-fold cross validation and drew the learning curve in figure (\ref{fig:learning curve}) to show the performance versus the number of training examples. As shown in the figure, the testing accuracy increases as the set of training instances grows larger, and the variance of accuracies decreases. 
+\begin{figure}[htb]
+\centering
+\includegraphics[width = 0.4\textwidth]{learningcurve.jpg}
+\caption{Learning Curve of testing accuracy}
+\label{fig:learning curve}
+\end{figure}
 
 \section*{Acknowledgments}
 This project is supported by Upenn CIS 519. Thanks Eric Eaton and Xiaoxiang Hu for their instruction. Thanks MATLAB for providing some many useful toolbox.
