@@ -13,7 +13,7 @@ for s = sigma
     modelNum = modelNum + 1
     for i=1:length(classTypes)
         Ytemp = double((Y==classTypes(i)));
-        cl{modelNum}{i} = svmTrain(X,Ytemp,C,@(x1,x2) gaussianKernel(x1,x2,s),classTypes(i), 1e-3, 50);
+        cl{modelNum}{i} = svmTrain(X,Ytemp,C,@(x1,x2) gaussianKernel(x1,x2,s),classTypes(i), 1e-3, 5);
 %         cl{i} = svmTrain(X,Ytemp,C,@linearKernel,classTypes(i), 1e-3, 20);
     end   
 end

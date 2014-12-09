@@ -16,8 +16,8 @@ if (length(classType)==2)
     classType = [1];
 end
 for i=1:length(classType)
-    %templabels = double(labels==cl{i}.className);
-    templabels = double(labels==1);
+    templabels = double(labels==cl{i}.className);
+    %templabels = double(labels==1);
     [X,Y,T,AUC] = perfcurve(templabels,newscore(:,i),1);
     h(i) = plot(X,Y,colors(i),'LineWidth',3);
     legends{i} = strcat('ROC plot for class ',num2str(cl{i}.className));

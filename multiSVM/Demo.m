@@ -1,0 +1,166 @@
+%% Demo.m
+% University of Pennsylvania
+% CIS 519  Introduction to Machine Learning
+% Change the scale and search the Image
+clear
+clc
+close all
+%% Load Image
+im = im2double( imread( 'test13.jpg' ) );
+if length(size(im)) == 3
+    imgray = rgb2gray( im );
+end
+imgray = imadjust( imgray );
+
+%% Init
+[h, w] = size( imgray );
+blockRatio = 0.15;
+minRatio = 0.2;
+maxSide = min(w,h);
+minSide = min( 80, ceil( minRatio * maxSide) );
+changeRatio = 1.2;
+sides = minSide;
+s = minSide;
+while s < maxSide
+    s = ceil( s * changeRatio );
+    sides = [sides, s];
+end
+sides(end) = maxSide;
+shift = ceil( sides * blockRatio );
+xNum = ceil( (w - sides)./ shift ); 
+if xNum(end) == 0
+    xNum(end) =1;
+end
+
+yNum = ceil( (h - sides)./ shift );
+if yNum(end) == 0
+    yNum(end) =1;
+end
+
+DetectNum = xNum * yNum';
+RECT = zeros( DetectNum, 4 );
+Patches = zeros( DetectNum, 900 );
+PatchSize = [ 40 40 ];
+%% Detect
+% imshow( im )
+% hold on 
+% detectWin=rectangle( 'position', [1, 1, sides(1), sides(1)], 'LineWidth', 1.5, 'EdgeColor', 'g');
+Idx=0;
+tic
+for k = 1:length(sides)
+    ymin = 1-shift(k);
+    for j = 1:yNum(k)
+        xmin = 1-shift(k);
+        if j ~= yNum(k)
+            ymin = ymin + shift(k);
+        else
+            ymin = h - sides(k) + 1;
+        end
+        for i = 1:xNum(k)
+            Idx = Idx + 1;
+            if i ~= xNum(k)
+                xmin =xmin + shift(k);
+                Rect =  [xmin, ymin, sides(k), sides(k)];
+%                 set(detectWin, 'position', Rect);
+                RECT( Idx,: ) = Rect;
+                P = imcrop ( imgray,  Rect );
+                P = imresize( P, PatchSize );
+                Patches(Idx,:) = extractHOGFeatures( P, 'CellSize', [ 6, 6 ], 'BlockSize', [ 2, 2 ], 'NumBins', 9, 'UseSignedOrientation', false);
+            else
+                xmin = w-sides(k) + 1;       
+                Rect =  [xmin, ymin, sides(k), sides(k)];
+%                 set(detectWin, 'position', Rect);
+                RECT( Idx,: ) = Rect;
+                P = imcrop ( imgray,  Rect );
+                P = imresize( P, PatchSize );
+                Patches(Idx,:) = extractHOGFeatures( P, 'CellSize', [ 6, 6 ], 'BlockSize', [ 2, 2 ], 'NumBins', 9, 'UseSignedOrientation', false);
+            end
+%              drawnow
+%              pause()
+        end
+    end
+end
+toc
+
+
+%% Predict
+
+% load('cls2.mat');
+load('cls.mat');
+
+features = bsxfun( @rdivide, bsxfun( @minus, Patches, X_mean), X_std);
+tic
+[Labels,scores] = multiSVMpredict( model, features);
+Labels = Labels';
+toc
+
+%% Visualize
+imshow(im)
+hold on
+% Only One Type Detection
+overlap_thres = 0.7;
+Near = cell(1,4);
+display = [];
+K = zeros(1,4);
+Ballidx = cell(1,4);
+Scores = cell(1,4);
+Scores_Sort = cell(1,4);
+sortIdx = cell(1,4);
+max_p = zeros(1,4);
+
+for t = 1:4
+    % Bowling: 1     Golf: 2     Soccer: 3    Tennis: 4
+    Ballidx{t} = find( Labels == t );
+    Scores{t}=scores(Ballidx{t},t);
+    [Scores_Sort{t}, sortIdx{t}] = sort( Scores{t}, 'descend');
+    max_p(t) = max(Scores_Sort{t});
+end
+
+[~,t] = max(max_p);
+
+%overlap elimination
+while K(t) < length(sortIdx{t})
+    K(t) = K(t) + 1;
+    Ia = Ballidx{t}(sortIdx{t}(K(t)));
+    A = RECT(Ia, :);
+    Aarea = A(3) * A(4);
+    near = 0;
+    remove_id = [];
+    for i = (K(t)+1) : length(sortIdx{t})
+        Ib = Ballidx{t}(sortIdx{t}(i));
+        B = RECT(Ib,:);
+        Barea = B(3) * B(4);
+        overlap = rectint(A,B) / min(Aarea,Barea);
+        if overlap > overlap_thres
+            near = near +1;
+            remove_id = [ remove_id; i];
+        end
+    end
+    Near{t} = [Near{t}; near];
+    sortIdx{t}(remove_id)= [];
+    Scores_Sort{t}(remove_id)= [];
+    display = [display; Ia, t, near];
+end
+
+
+
+NearThres = max( 4, max(display(:,3))/2 );
+
+for i = 1:size(display,1)
+    if display(i,3) > NearThres
+        switch display(i,2)
+            case 1 
+                rectangle('position', RECT(display(i,1),:), 'EdgeColor', 'b', 'LineWidth', 1.5);
+                text(RECT(display(i,1),1)+2,RECT(display(i,1),2)+5,'Bowling','color', 'b')
+            case 2
+                rectangle('position', RECT(display(i,1),:), 'EdgeColor', 'g', 'LineWidth', 1.5);
+                text(RECT(display(i,1),1)+2,RECT(display(i,1),2)+5,'Golf','color', 'g')
+            case 3
+                rectangle('position', RECT(display(i,1),:), 'EdgeColor', 'r', 'LineWidth', 1.5);
+                text(RECT(display(i,1),1)+2,RECT(display(i,1),2)+5,'Soccer','color', 'r')
+            case 4
+                rectangle('position', RECT(display(i,1),:), 'EdgeColor', 'c', 'LineWidth', 1.5);
+                text(RECT(display(i,1),1)+2,RECT(display(i,1),2)+5,'Tennis','color', 'c')
+        end
+    end
+end

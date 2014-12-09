@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.12)  8 DEC 2014 15:38
+=======
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.2)  8 DEC 2014 18:54
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -343,50 +347,81 @@ Overfull \hbox (5.1225pt too wide) in paragraph at lines 65--65
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+<<<<<<< HEAD
 <Analysis_of_Available_Data.jpg, id=5, 439.6425pt x 362.85562pt>
 File: Analysis_of_Available_Data.jpg Graphic file (type jpg)
+=======
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
 
-<use Analysis_of_Available_Data.jpg>
-Package pdftex.def Info: Analysis_of_Available_Data.jpg used on input line 77.
-(pdftex.def)             Requested size: 195.126pt x 161.04114pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Package natbib Warning: Citation `ROIResult' on page 1 undefined on input line 
+71.
 
 
-Package natbib Warning: Citation `crd' on page 1 undefined on input line 89.
+Package natbib Warning: Citation `overview' on page 1 undefined on input line 7
+7.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 78.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 78.
+<overview.jpg, id=5, 518.6878pt x 277.78781pt>
+File: overview.jpg Graphic file (type jpg)
+ <use overview.jpg>
+Package pdftex.def Info: overview.jpg used on input line 83.
+(pdftex.def)             Requested size: 243.91124pt x 130.63232pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 83--84
+ [][] 
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
+Package natbib Warning: Citation `crd' on page 1 undefined on input line 90.
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 89--91
+[]\OT1/ptm/m/n/10 Before we use HOG to ex-trac-t fea-tures from la-beled
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
 
  []
 
+<<<<<<< HEAD
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+=======
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{D:/应用程序/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sf
+d}}
 
 
-
+<<<<<<< HEAD
  <./Analysis_of_Available_Data.jpg>] <CornerDetection.jpg, id=22, 656.4525pt x 
 230.8625pt>
+=======
+
+]
+<CornerDetection.jpg, id=21, 656.4525pt x 230.8625pt>
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
 File: CornerDetection.jpg Graphic file (type jpg)
 
 <use CornerDetection.jpg>
-Package pdftex.def Info: CornerDetection.jpg used on input line 93.
+Package pdftex.def Info: CornerDetection.jpg used on input line 95.
 (pdftex.def)             Requested size: 195.126pt x 68.62167pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 98.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 98.
 
 
-Package natbib Warning: Citation `cird' on page 2 undefined on input line 98.
+Package natbib Warning: Citation `cird' on page 2 undefined on input line 100.
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 98--99
+Underfull \hbox (badness 1019) in paragraph at lines 100--101
 \OT1/ptm/m/n/10 set. One of the ro-bustest ap-proach is Cir-cle Hough
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
@@ -394,35 +429,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 File: circleDetection.jpg Graphic file (type jpg)
 
 <use circleDetection.jpg>
-Package pdftex.def Info: circleDetection.jpg used on input line 102.
+Package pdftex.def Info: circleDetection.jpg used on input line 104.
 (pdftex.def)             Requested size: 195.126pt x 115.63435pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--124
 
- []
+Package natbib Warning: Citation `ROIResult' on page 2 undefined on input line 
+109.
 
+<ROISelection.jpg, id=29, 353.82187pt x 408.77719pt>
+File: ROISelection.jpg Graphic file (type jpg)
+ <use ROISelection.jpg>
+Package pdftex.def Info: ROISelection.jpg used on input line 112.
+(pdftex.def)             Requested size: 195.126pt x 225.43317pt.
+
+<<<<<<< HEAD
 (./report-ChengChuZhao.bbl
 Underfull \hbox (badness 1546) in paragraph at lines 14--18
 []\OT1/ptm/m/n/10 Brown, Matthew, Szeliski, Richard, and Winder, Si-
  []
 
 [2 <./CornerDetection.jpg> <./circleDetection.jpg>])
+=======
+[2 <F:/Upenn/CIS519/Project/final-ChengChuZhao/overview.jpg> <F:/Upenn/CIS519/P
+roject/final-ChengChuZhao/CornerDetection.jpg> <F:/Upenn/CIS519/Project/final-C
+hengChuZhao/circleDetection.jpg> <F:/Upenn/CIS519/Project/final-ChengChuZhao/RO
+ISelection.jpg>]
+(F:\Upenn\CIS519\Project\final-ChengChuZhao\report-ChengChuZhao.bbl)
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
 [3
 
 ]
+<<<<<<< HEAD
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (./report-ChengChuZhao.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
+=======
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
+ (F:\Upenn\CIS519\Project\final-ChengChuZhao\report-ChengChuZhao.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
 Package rerunfilecheck Info: File `report-ChengChuZhao.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  6109 strings out of 493304
  88501 string characters out of 6139871
  181794 words of memory out of 5000000
@@ -443,6 +500,26 @@ Output written on report-ChengChuZhao.pdf (3 pages, 306400 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
+=======
+ 5825 strings out of 495354
+ 84302 string characters out of 3183132
+ 175607 words of memory out of 3000000
+ 8921 multiletter control sequences out of 15000+200000
+ 19378 words of font info for 34 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 29i,11n,45p,1323b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/应用程序/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<D:/应用程序
+/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/应用程序/CTEX/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/应用程序/CTEX/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr10.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/urw/times
+/utmb8a.pfb><D:/应用程序/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/�
+��用程序/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/应用程序/CTEX/
+MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report-ChengChuZhao.pdf (3 pages, 354135 bytes).
+PDF statistics:
+ 86 PDF objects out of 1000 (max. 8388607)
+>>>>>>> edf9b25d6108604c68a4e9348f204419e94890f9
  20 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
