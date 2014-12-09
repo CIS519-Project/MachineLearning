@@ -1,0 +1,48 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Atherton~T.J.(1999)]{cirDetect1}
+Atherton~T.J., Kerbyson~D.J.
+\newblock Size invariant circle detection.
+\newblock pp.\  795--803, 1999.
+
+\bibitem[Brown et~al.(2005)Brown, Szeliski, and Winder]{brown2005multi}
+Brown, Matthew, Szeliski, Richard, and Winder, Simon.
+\newblock Multi-image matching using multi-scale oriented patches.
+\newblock In \emph{Computer Vision and Pattern Recognition, 2005. CVPR 2005.
+  IEEE Computer Society Conference on}, volume~1, pp.\  510--517. IEEE, 2005.
+
+\bibitem[Dalal \& Triggs(2005)Dalal and Triggs]{dalal2005histograms}
+Dalal, Navneet and Triggs, Bill.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In \emph{Computer Vision and Pattern Recognition, 2005. CVPR 2005.
+  IEEE Computer Society Conference on}, volume~1, pp.\  886--893. IEEE, 2005.
+
+\bibitem[D'Orazio~T.(2004)]{cirDetect3}
+D'Orazio~T., Guaragnella~C., Leo M. Distante~A.
+\newblock A new algorithm for ball recognition using circle hough transform and
+  neural classifier.
+\newblock pp.\  393--408, 2004.
+
+\bibitem[Massimiliano~P.(1998)]{SVMforRecogintion}
+Massimiliano~P., Alessandro~V.
+\newblock Support vector machines for 3d object recogintion.
+\newblock pp.\  637--646, 1998.
+
+\bibitem[Victor~A.(2006)]{cirDetect2}
+Victor~A., Carlos~H.G., Arturo P. Raul~E.S.
+\newblock Circle detection on images using genetic algorithms.
+\newblock pp.\  652--657, 2006.
+
+\bibitem[Viola \& Jones(2001)Viola and Jones]{viola2001rapid}
+Viola, Paul and Jones, Michael.
+\newblock Rapid object detection using a boosted cascade of simple features.
+\newblock In \emph{Computer Vision and Pattern Recognition, 2001. CVPR 2001.
+  Proceedings of the 2001 IEEE Computer Society Conference on}, volume~1, pp.\
+  I--511. IEEE, 2001.
+
+\end{thebibliography}

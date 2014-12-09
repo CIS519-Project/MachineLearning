@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: report-ChengChuZhao.aux
+The style file: icml2014.bst
+Database file #1: report-ChengChuZhao.bib
+Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
+while executing---line 1352 of file icml2014.bst
+Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
+while executing---line 1352 of file icml2014.bst
+Warning--empty journal in cirDetect1
+Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
+while executing---line 1434 of file icml2014.bst
+Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
+while executing---line 1434 of file icml2014.bst
+Warning--empty journal in cirDetect3
+Warning--empty journal in SVMforRecogintion
+Warning--empty journal in cirDetect2
+You've used 7 entries,
+            2773 wiz_defined-function locations,
+            636 strings with 6028 characters,
+and the built_in function-call counts, 3700 in all, are:
+= -- 364
+> -- 112
+< -- 16
++ -- 40
+- -- 33
+* -- 230
+:= -- 501
+add.period$ -- 24
+call.type$ -- 7
+change.case$ -- 32
+chr.to.int$ -- 7
+cite$ -- 18
+duplicate$ -- 209
+empty$ -- 337
+format.name$ -- 44
+if$ -- 853
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 7
+newline$ -- 43
+num.names$ -- 28
+pop$ -- 80
+preamble$ -- 1
+purify$ -- 25
+quote$ -- 0
+skip$ -- 178
+stack$ -- 0
+substring$ -- 212
+swap$ -- 68
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 77
+warning$ -- 4
+while$ -- 38
+width$ -- 0
+write$ -- 100
+(There were 4 error messages)
