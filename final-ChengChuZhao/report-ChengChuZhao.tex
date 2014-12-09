@@ -39,12 +39,12 @@
 
 % The \icmltitle you define below is probably too long as a header.
 % Therefore, a short form for the running title is supplied here:
-\icmltitlerunning{Objects Recognization Based on SOG with SVM}
+\icmltitlerunning{Objects Recognization Based on HOG with SVM}
 
 \begin{document} 
 
 \twocolumn[
-\icmltitle{Objects Recognization Based on SOG with SVM\\Final Report for CIS 519}
+\icmltitle{Objects Recognization Based on HOG with SVM\\Final Report for CIS 519}
 
 % It is OKAY to include author information, even for blind
 % submissions: the style file will automatically remove it for you
@@ -68,13 +68,13 @@ We studied the question of object recognization using histograms of oriented gra
 
 
 \section{Introduction}
-The topic for this project is to detect the object of our interest on the given images and predict which class it belongs to. The dataset we use is from Caltech 256(Griffin, G. Holub, AD. Perona, P.), which contain images of four kinds of balls, including 98 images of golf in the folder ``088.golf-ball'', 174 images of soccer ball in ``193.soccer-ball'', 104 images of bowling-ball in ``017.bowling-ball'' and 98 images of tennis ball in ``216.tennis-ball''. As shown in Figure \cite{ROIResult}, among images of the same kind (take soccer-ball as example), some of the images have a whole contour of soccer in the center and fill the image, while in other images(such as a photo of a soccer game), the soccer may cover a small portion in the corner, or only part of a soccer or a group of soccers appear on the image. We decide to use the image with a single target occupying most of the image as the training set. So the first thing we need to do before training is to create such standard images for training from the raw dataset. And our final goal is, given a new image,  the model can detect whether this image contains any ball of our interest or just unrelated to balls and in the first condition, the model can give the label for the class the detected object belongs to.
+The topic for this project is to detect the object of our interest on the given images and predict which class it belongs to. The dataset we use is from Caltech 256(Griffin, G. Holub, AD. Perona, P.), which contain images of four kinds of balls, including 98 images of golf in the folder ``088.golf-ball'', 174 images of soccer ball in ``193.soccer-ball'', 104 images of bowling-ball in ``017.bowling-ball'' and 98 images of tennis ball in ``216.tennis-ball''. As shown in Figure \ref{fig:ROIResult}, among images of the same kind (take soccer-ball as example), some of the images have a whole contour of soccer in the center and fill the image, while in other images(such as a photo of a soccer game), the soccer may cover a small portion in the corner, or only part of a soccer or a group of soccers appear on the image. We decide to use the image with a single target occupying most of the image as the training set. So the first thing we need to do before training is to create such standard images for training from the raw dataset. And our final goal is, given a new image,  the model can detect whether this image contains any ball of our interest or just unrelated to balls and in the first condition, the model can give the label for the class the detected object belongs to.
 
-\section{Model Details} 
+\section{Methodology} 
 
 \subsection{Overview of the Method}
 Inspired by the paper \cite{dalal2005histograms} presented by Navneet Dalal and Bill Triggs, we tried the method described in this paper. The summary figure for our approch is shown in Figure .\\
-An overview of the whole process is shown in Figure \cite{overview}.\\
+An overview of the whole process is shown in Figure \ref{fig:overview}.\\
 For the training process, we first preprocess the images by selecting the region containing the ball manually, resize and restore such images as the dataset for feature extraaction. Then, HOG is applied on those processes images and get a vector of length $900$ as features for one instance. Thus, we build the training dataset, a .dat file. Then, SVM with Gaussian kernel is used to learn from the dataset. The metrics of accuracy, ROC and learning curve along with cross-validation are used to ensure that the model has learned to classify four kinds of balls with an acceptable accuracy without overfitting. The training is finished. \\
 For the test part, given an brand-new image, no matter whether it contains any ball of our interest, what the portion of the ball covers the image and whether it appears in the center or in the corner, individually or in group, the model scan the image using mask with increasing size, doing the corresponding manipulation with the same parameters as those for training set, and then make prediction for each block. Among all predictions, the model will choose the ones with high confidence and decide whether they point to the same object. Finally, the target of our interest will be framed in a rectangle along with its label.
 
@@ -87,7 +87,7 @@ For the test part, given an brand-new image, no matter whether it contains any b
 
 \subsection{Region of Interest (ROI) Selection}
 Before we use HOG to extract features from labeled images, we need to select the ROI which contains an object we would like our model to recognize. We tried several ways to select such region.\\
-At the beginning, we considered using corner detection directly on the original image to select ROI and at the same time extract features. However, as shown in Figure \cite{crd}, extracting corner features based on the Harris Corner Detection and Adaptive Non-maximal Suppression method \cite{brown2005multi} is not so helpful for following reasons: firstly, different pattern can be found in a single kind of balls so that geometric corner feature doesn't provide enough information for classification; secondly, the complicated background may generate large amount of features which are irrelevant to the ball.\\
+At the beginning, we considered using corner detection directly on the original image to select ROI and at the same time extract features. However, as shown in Figure \ref{fig:crd}, extracting corner features based on the Harris Corner Detection and Adaptive Non-maximal Suppression method \cite{brown2005multi} is not so helpful for following reasons: firstly, different pattern can be found in a single kind of balls so that geometric corner feature doesn't provide enough information for classification; secondly, the complicated background may generate large amount of features which are irrelevant to the ball.\\
 
 
 \begin{figure}[htp]
@@ -97,7 +97,7 @@ At the beginning, we considered using corner detection directly on the original 
 \label{fig:crd}
 \end{figure}
 
-Then we tried several methods for circle detection including \cite{cirDetect1}, \cite{cirDetect2}, \cite{cirDetect3} to pick up the circular region and build the training set. One of the robustest approach is Circle Hough Transform (CHT), which takes the image $M$ and desired radius range $[r_{min},r_{max}]$ as inputs and return the positions of circle centers. As shown in Figure \cite{cird}, this method preforms good for the standard images with a single ball occupyting the whole image but has a poor performance when there are other ball-like distractions such as heads and the three holes on a bowling-ball, or only partial of the object, rather than a whole circle, appear on the image. It's also possible for CHT to return some position with high confidence for some circular patterns inside the ball. It's really hard to pick up the ROI just by the circular shape and without any referring to the patterns and features inside the region. \\
+Then we tried several methods for circle detection including \cite{cirDetect1}, \cite{cirDetect2}, \cite{cirDetect3} to pick up the circular region and build the training set. One of the robustest approach is Circle Hough Transform (CHT), which takes the image $M$ and desired radius range $[r_{min},r_{max}]$ as inputs and return the positions of circle centers. As shown in Figure \ref{fig:cird}, this method preforms good for the standard images with a single ball occupyting the whole image but has a poor performance when there are other ball-like distractions such as heads and the three holes on a bowling-ball, or only partial of the object, rather than a whole circle, appear on the image. It's also possible for CHT to return some position with high confidence for some circular patterns inside the ball. It's really hard to pick up the ROI just by the circular shape and without any referring to the patterns and features inside the region. \\
 
 \begin{figure}[htp]
 \centering
@@ -106,7 +106,7 @@ Then we tried several methods for circle detection including \cite{cirDetect1}, 
 \label{fig:cird}
 \end{figure}
 
-Thus, we finally decided to select ROI for each image in dataset manually. To increase the number of instances in our training data, for each image, let the user chooses the ROI with a movable, resizable rectangle and position it interactively using the mouse. And then shift the area a little in one of the eight directions, thus a raw image will create at most nine images and at least one image for training. Finally, the picked area is resized to a $40 \times 40$ pixal square. Apart from the four kinds of balls, we also generate some squares with the label "Unknown" to represent the unrelated features to ball. The images in this class are mostly selected from the background, fragments of the ball and other unrelated area. Figure \cite{ROIResult} shows the processed images after manual selection and resize. First two rows are images for balls and the third row is for "Unknown".
+Thus, we finally decided to select ROI for each image in dataset manually. To increase the number of instances in our training data, for each image, let the user chooses the ROI with a movable, resizable rectangle and position it interactively using the mouse. And then shift the area a little in one of the eight directions, thus a raw image will create at most nine images and at least one image for training. Finally, the picked area is resized to a $40 \times 40$ pixal square. Apart from the four kinds of balls, we also generate some squares with the label "Unknown" to represent the unrelated features to ball. The images in this class are mostly selected from the background, fragments of the ball and other unrelated area. Figure \ref{fig:ROIResult} shows the processed images after manual selection and resize. First two rows are images for balls and the third row is for "Unknown".
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.4\textwidth]{ROISelection.jpg}
@@ -116,6 +116,28 @@ Thus, we finally decided to select ROI for each image in dataset manually. To in
 
 \subsection{PCA}
 The number of features we get using HOG is $900$. Since the number of instances we use is about $4000$, which is not large enough for $900$ features and easy to result in overfit. On the other hand, to improve efficiency and decrease the time for training, it's necessary to reduce the dimension first. On the training dataset, we compute covariance matrix $\Sigma$ and mean (average over all rows of $X$). Next, we choose the $d$ most important PCA basis vectors as the new training dataset. Then $\Sigma$ and $X$ got previously on training dataset should be used on the test data.
+
+\section{Results and Performance Study}
+\subsection{Results on Raw Images}
+Using the model after learning, we test it on several raw images, including the ones that we select ROI for training and new images which the model never see before. In Figure \ref{fig:succefulResult}, we show some of the results that our model detect and label the target successfully. Note: we use different colors of rectangle to frame the area of the detected target, red for soccer, cyan for tennis, purple for bowling-ball and green for golf. In theory, our model can detect all balls with the same label on an image, such as the upper middle and right ones with several tennis balls. The lower middle image with golf is a brand-new image from website and our model can detect and label it correctly. \\
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.5\textwidth]{successfulResult.jpg}
+\caption{Successful Results for Detection and Label}
+\label{fig:succefulResult}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.5\textwidth]{failedResult.jpg}
+\caption{False Positive and True Negative Results}
+\label{fig:failedResult}
+\end{figure}
+
+However, there are also some cases in which our model either fails to detect all the targets (as the right one with several bowling-balls in Figure \ref{fig:failedResult}), or gives false positive prediction (label some irrelevant areas as a specific kind of ball, such as the left and middle ones). We analyzed the reasons for the failure. One is that the target is sheltered by other objects have regular patterns, such as the soccer in the net shown Figure \ref{fig:failedResult}. Another reason is related to the size of the raw images. The image with a lifting hand holding a tennis has $96\times96$ pixels. Since the background of it is also green, it's more likely to detect and label the background mistakenly as tennis.
+
+
 
 
 
