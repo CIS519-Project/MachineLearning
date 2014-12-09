@@ -30,6 +30,7 @@
 % Packages hyperref and algorithmic misbehave sometimes.  We can fix
 % this with the following command.
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
+\newcommand{\argmin}{\arg\!\min}
 
 % Employ the following version of the ``usepackage'' statement for
 % submitting the draft version of the paper for review.  This will set
@@ -73,10 +74,9 @@ The topic for this project is to detect the object of our interest on the given 
 \section{Methodology} 
 
 \subsection{Overview of the Method}
-Inspired by the paper \cite{dalal2005histograms} presented by Navneet Dalal and Bill Triggs, we tried the method described in this paper. The summary figure for our approch is shown in Figure .\\
-An overview of the whole process is shown in Figure \ref{fig:overview}.\\
-For the training process, we first preprocess the images by selecting the region containing the ball manually, resize and restore such images as the dataset for feature extraaction. Then, HOG is applied on those processes images and get a vector of length $900$ as features for one instance. Thus, we build the training dataset, a .dat file. Then, SVM with Gaussian kernel is used to learn from the dataset. The metrics of accuracy, ROC and learning curve along with cross-validation are used to ensure that the model has learned to classify four kinds of balls with an acceptable accuracy without overfitting. The training is finished. \\
-For the test part, given an brand-new image, no matter whether it contains any ball of our interest, what the portion of the ball covers the image and whether it appears in the center or in the corner, individually or in group, the model scan the image using mask with increasing size, doing the corresponding manipulation with the same parameters as those for training set, and then make prediction for each block. Among all predictions, the model will choose the ones with high confidence and decide whether they point to the same object. Finally, the target of our interest will be framed in a rectangle along with its label.
+Inspired by the paper \cite{dalal2005histograms} presented by Navneet Dalal and Bill Triggs, we tried the HOG method to extract the features vector for each individual image and apply SVM learner to train the dataset. An overview of the whole process is shown in Figure \ref{fig:overview}.\\
+For the training process, we first preprocess the images by selecting the region containing the ball manually, resize and restore such images as the dataset for feature extraction. Then, HOG is applied on those processes images and get a vector of length $900$ as features for one instance. Thus, we reconstruct the training dataset by standardizing the dataset and apply PCA method to reduce the number of features. Then, SVM with Gaussian kernel is used to learn from the dataset. The metrics of accuracy, ROC and learning curve along with cross-validation are used to ensure that the model has learned to classify four kinds of balls with an acceptable accuracy without overfitting.\\
+While detecting ball in an brand-new image, the model scan the image using mask with increasing size, doing the corresponding manipulation with the same parameters as those for training set, and then make prediction for each block no matter whether it contains any ball of our interest, what the portion of the ball covers the image and whether it appears in the center or in the corner, individually or in group. Among all predictions, the model will choose the ones with high confidence and decide whether they point to the same object. Finally, the target of our interest will be framed in a rectangle along with its label.
 
 \begin{figure}[htp]
 \centering
@@ -114,14 +114,90 @@ Thus, we finally decided to select ROI for each image in dataset manually. To in
 \label{fig:ROIResult}
 \end{figure}
 
+\subsection{Histogram of Oriented Gradients Discriptors}
+As described in ROI selection section, the patches cropped out manually were resized to 40x40 pixels. Each patch works as an dataset instance, however, there are two primary ways to extract features from these patches. First, each pixels value (grayscale, RGB or LAB color spaces) can be extracted directly as a feature. Second, apply HOG or SIFT to extract features. Considering the HOG/SIFT representation can capture edges and gradient structure which is characteristic of local shape as well as easily maintain the invariance to local geometric and photometric transformation, we finally chose second method. Also, HOG method can be implemented easily with fewer features compared to SIFT, so we chose to use HOG discriptors.\\  
+
+Implementing HOG to extract features from patches followed procedure shown in figure \ref{fig:HOG}. For balls detection and classifier, following coefficient were chosen: All patches were converted into grayscale color space to normalize gamma and color; 1-D point derivative(centered [-1, 0, 1]) mask with no smoothing was applied to patches; 9 orientation bins evenly spaced over 0
+180 degrees (unsigned gradient) was chosen; Cell size 6x6 and block size 2x2 were choosen for R-HOG.  
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.4\textwidth]{HOG.jpg}
+\caption{HOG Procedure}
+\label{fig:HOG}
+\end{figure}
+
+HOG features is shown in figure \ref{fig:HOGtest}. After extract HOG features from a patch, reshape the feature matrix into a vector represent the patch. Eventually we generated a 3660x900 datasets with 3660 instances and 900 features. 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.4\textwidth]{hogtest.jpg}
+\caption{HOG Feature Extraction Result}
+\label{fig:HOG}
+\end{figure}
+
 \subsection{PCA}
-The number of features we get using HOG is $900$. Since the number of instances we use is about $4000$, which is not large enough for $900$ features and easy to result in overfit. On the other hand, to improve efficiency and decrease the time for training, it's necessary to reduce the dimension first. On the training dataset, we compute covariance matrix $\Sigma$ and mean (average over all rows of $X$). Next, we choose the $d$ most important PCA basis vectors as the new training dataset. Then $\Sigma$ and $X$ got previously on training dataset should be used on the test data.
+The number of features we get using HOG is $900$. Since the number of instances we use is about $4000$, which is not large enough for $900$ features and easy to result in overfit, it's necessary to reduce the dimension first. On the other hand, applying PCA would improve efficiency and decrease the time for training. On the training dataset, we firstly standardize the dataset $X$ and record covariance matrix $\Sigma$ and mean values $\mu$. Next, we choose the $d$ most important PCA basis vectors by calculating the eigenvalues and eigenvectors of $X^TX$. Then we reconstruct the new training dataset by multiply the PCA basis vectors to the origin dataset $X$. %While predicting class for a new instance $\mathbf{x_new}$, Then $\Sigma$ and $X$ got previously on training dataset should be used on the test data.
+Support vector machine(SVM) is one of basic learning algorithm that most widely used to solve object recognition problems \cite{HogDetection1},\cite{SVMforRecogintion}. In our case, we applied one-class SVM first and extend it to multi-class to train the dataset with several different labels.
+\subsection{One-Class SVM}
+Given a set of instances which belongs to either of two classes, a SVM classifier finds the optimal hyperplane leaving the largest possible fraction of instances of the same class on the same side, while maximize the distance of either class from hyperplane. The objective function of SV learner is
+\begin{equation}
+\argmin_\theta \frac{1}{2}\sum_{i=1}^d \theta_i^2
+\end{equation}
+s.t. $y_j(\mathbf{\theta x_j})\geq 1$ $\forall j$.\\
+The problem of minimizing the cost function could be simplified as maximizing the $J(\alpha)$ in \ref{eq:Jfunc}.
+\begin{equation}
+J(\alpha) = \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \alpha_i \alpha_jy_iy_j\langle x_i,x_j\rangle
+\label{eq:Jfunc}
+\end{equation}
+s.t. $\alpha_i\leq 0 \forall i$, $\sum_i \alpha_iy_i = 0$,
+where $\alpha_i$ is the constraints weight scaler, and $\langle x_i,x_j \rangle$ is a scaler given by the kernel function.\\
+Take linear kernel as an example, the parameter of the hyperplane follows that
+\begin{equation}
+\mathbf{\theta} = \sum_{i=1}^N\alpha_i y_i x_i
+\end{equation}
+while $b$ can be determined from $\alpha$ solution of the dual problem, and from the Kühn-Tucker conditions
+\begin{equation}
+\alpha_i(y_i(\theta x_i+b)-1) = 0, i = 1,2,...,N
+\end{equation}
+The problem of classifying a new data instance could be simply solved by looking at the sign of the score function 
+\begin{equation}
+P(\mathbf{x}) = \mathbf{\theta}\mathbf{x}+\mathbf{b}
+\label{eq:score}
+\end{equation}
+While applying SVM algorithm, choosing proper kernel is essential to train the classifier. We used two different kernels to train the dataset, which are Gaussian kernel, linear kernel, and drew the Receiver	Operating Characteristic(ROC) curve respectively. The result are shown in the figure (\ref{fig:ROC1},\ref{fig:ROC2}). As shown in the figure, the two kernels give similar result while Gaussian kernel provides a faster speed to converge.\\
+\begin{figure}[htb]
+\centering
+\includegraphics[width = 0.4\textwidth]{ROCgauss.jpg}
+\caption{ROC curve of SVM with Gaussian Kernel}
+\label{fig:ROC1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width = 0.4\textwidth]{ROClinear.jpg}
+\caption{ROC curve of SVM with Linear Kernel}
+\label{fig:ROC2}
+\end{figure}
+\subsection{Multi-Class SVM}
+Traditional SVM algorithm only solves 2-classes problems. However, detecting ball object in a image should be able to tell whether there is a ball and figure out the type of the ball object, which is a multi-class classification problem. Therefore, one-vs-rest is introduced for solving multi-class problem.\\
+Given a dataset with $k$ different labels, $k$ different one-class SVM classifiers is trained for each class. When training for individual class, the instances that belongs to this class are labeled as $1$, and all the others are labeled as $0$. A new instance should be predicted as in the class which gives the largest value from score function \ref{eq:score}.\\
+\subsection{Detect Balls from New Image}
+Once classifier was trained, balls could be detected from the new input image based on the predict results. \\
+In order to detect the balls, the algorithm should search every possible detect window in the image. So square detect window with changeable size move around in the image to extract test patches. Window size changes from minimum value (80 pixels or 10 percent of maximum side) to maximum value ( small one between image width and height). And overlapping ratio between two consecutive detect windows is 85 percent.  Every patch is resized to 40x40 pixels, extracted HOG features, and normalized in the same way with training data. Following this, apply classifier to predict labels for test instances. Based on the predict results, overlap test instances can be eliminated by adaptive non-maximum suppression. A neighbour positive detection threshold is set to improve the detection result. 
 
 \section{Results and Performance Study}
+\subsection{Learning Curve}
+To evaluate our SVM classifier, we run our classifier through 10-fold cross validation and drew the learning curve in figure (\ref{fig:learning curve}) to show the performance versus the number of training examples. As shown in the figure, the testing accuracy increases as the set of training instances grows larger, and the variance of accuracies decreases. 
+\begin{figure}[htb]
+\centering
+\includegraphics[width = 0.4\textwidth]{learningcurve.jpg}
+\caption{Learning Curve of testing accuracy}
+\label{fig:learning curve}
+\end{figure}
 \subsection{Results on Raw Images}
 Using the model after learning, we test it on several raw images, including the ones that we select ROI for training and new images which the model never see before. In Figure \ref{fig:succefulResult}, we show some of the results that our model detect and label the target successfully. Note: we use different colors of rectangle to frame the area of the detected target, red for soccer, cyan for tennis, purple for bowling-ball and green for golf. In theory, our model can detect all balls with the same label on an image, such as the upper middle and right ones with several tennis balls. The lower middle image with golf is a brand-new image from website and our model can detect and label it correctly. \\
 
-\begin{figure}[htp]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{successfulResult.jpg}
 \caption{Successful Results for Detection and Label}

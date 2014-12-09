@@ -1,10 +1,8 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: report-ChengChuZhao.aux
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: report-ChengChuZhao.aux
 The style file: icml2014.bst
 Database file #1: report-ChengChuZhao.bib
-Warning--I didn't find a database entry for "ROIResult"
-Warning--I didn't find a database entry for "fig:overview"
-Warning--I didn't find a database entry for "crd"
-Warning--I didn't find a database entry for "cird"
 Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
 while executing---line 1352 of file icml2014.bst
 Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
@@ -15,5 +13,48 @@ while executing---line 1434 of file icml2014.bst
 Too many commas in name 1 of "D'Orazio T., Guaragnella C., Leo M., Distante A." for entry cirDetect3
 while executing---line 1434 of file icml2014.bst
 Warning--empty journal in cirDetect3
+Warning--empty journal in SVMforRecogintion
+Warning--empty journal in HogDetection1
 Warning--empty journal in cirDetect2
+You've used 7 entries,
+            2773 wiz_defined-function locations,
+            635 strings with 5896 characters,
+and the built_in function-call counts, 3632 in all, are:
+= -- 356
+> -- 101
+< -- 15
++ -- 37
+- -- 30
+* -- 217
+:= -- 490
+add.period$ -- 23
+call.type$ -- 7
+change.case$ -- 31
+chr.to.int$ -- 7
+cite$ -- 19
+duplicate$ -- 210
+empty$ -- 333
+format.name$ -- 39
+if$ -- 839
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 7
+newline$ -- 43
+num.names$ -- 28
+pop$ -- 80
+preamble$ -- 1
+purify$ -- 24
+quote$ -- 0
+skip$ -- 181
+stack$ -- 0
+substring$ -- 218
+swap$ -- 69
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 77
+warning$ -- 5
+while$ -- 37
+width$ -- 0
+write$ -- 97
 (There were 4 error messages)
