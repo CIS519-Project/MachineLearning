@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: status-ChengChuZhao.aux
+The style file: icml2014.bst
+Database file #1: status-ChengChuZhao.bib
+Warning--empty journal in SVMforRecogintion
+Warning--empty journal in HogDetection1
+You've used 2 entries,
+            2773 wiz_defined-function locations,
+            606 strings with 5151 characters,
+and the built_in function-call counts, 975 in all, are:
+= -- 92
+> -- 20
+< -- 4
++ -- 8
+- -- 6
+* -- 52
+:= -- 136
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 8
+chr.to.int$ -- 2
+cite$ -- 6
+duplicate$ -- 58
+empty$ -- 91
+format.name$ -- 8
+if$ -- 221
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 18
+num.names$ -- 8
+pop$ -- 22
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 51
+stack$ -- 0
+substring$ -- 60
+swap$ -- 18
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 22
+warning$ -- 2
+while$ -- 10
+width$ -- 0
+write$ -- 31
+(There were 2 warnings)

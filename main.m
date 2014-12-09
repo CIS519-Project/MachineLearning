@@ -37,14 +37,14 @@ tic;
 toc
 %disp('Polynomial completed');
 
-for i=1:5
+%for i=1:5
     
-    %[pred,scoresGauss] = multiSVMpredict(clGauss,X_test);
+    [pred,scoresGauss] = multiSVMpredict(clGauss,X_test);
     %acc = sum(pred(:)==Ytest(:))/length(Ytest)
-    [~,scoresGauss] = multiSVMpredict(clGauss,X_train);
-    %[~,scoresGauss] = svmPredict(clGauss{i},X_test);
-    [~,scoresLinear] = svmPredict(clLinear{i},X_test);
-    %[~,scoresLinear] = multiSVMpredict(clLinear{i},X_test);
+    %[~,scoresGauss] = multiSVMpredict(clGauss,X_train);
+    %[~,scoresGauss] = svmPredict(clGauss,X_test);
+    %[~,scoresLinear] = svmPredict(clLinear,X_test);
+    [~,scoresLinear] = multiSVMpredict(clLinear,X_test);
     %[~,scoresPoly] = multiSVMpredict(clPoly,X_test);
 
     %pred_train = multiSVMpredict(cl,X_train);
@@ -53,7 +53,7 @@ for i=1:5
     %train_accuracy = sum(pred_train'==Ytrain)/length(Ytrain);
     %figure(1)
     
-    h1{i} = plotROC(Ytest,scoresGauss,clGauss,'rgbyk');
+    h1 = plotROC(Ytest,scoresGauss,clGauss,'rgbyk');
     %figure(1);
     %string = 'rgbyk'
     %h1{i} = plotROC(double(Ytest == clGauss{i}.className),scoresGauss,clGauss,string(i));
@@ -61,10 +61,10 @@ for i=1:5
     %hold on;
     %figure(2)
 
-    h2{i} = plotROC(Ytest,scoresLinear,clLinear,'rgbyk');
+    h2 = plotROC(Ytest,scoresLinear,clLinear,'rgbyk');
     %h1{i} = plotROC(double(Ytest == clLinear{i}.className),scoresLinear,clLinear,string(i));
 
     %hold on;
     %h3 = plotROC(Ytest,scoresPoly,clPoly,'rgbyk');
-end
+%end
 

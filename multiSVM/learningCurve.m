@@ -1,7 +1,8 @@
-function accuracy = learningCurve(X,Y,n)
+function [accuracyTest,accuracyTrain] = learningCurve(X,Y,n)
 L = length(Y);
 oneTenths = floor(L/10);
-accuracy = zeros(n*10,10);
+accuracyTest = zeros(n*10,10);
+accuracyTrain = zeros(n*10,10);
 tic;
 for trail=1:n
     
@@ -28,9 +29,12 @@ for trail=1:n
             X_test = bsxfun(@rdivide, bsxfun(@minus,Xtest,X_mean),X_std);
             
             
-            cl = multiSVMfit(X_train,Y_train);
-            [pred,~] = multiSVMpredict(cl,X_test);
-            accuracy(10*(trail-1)+i,j) = sum(pred'==Ytest)/length(Ytest);
+            cl = multiSVMfit(X_train,Y_train,'Gauss');
+            [predTest,~] = multiSVMpredict(cl,X_test);
+            [predTrain,~] = multiSVMpredict(cl,X_test);
+            accuracyTest(10*(trail-1)+i,j) = sum(predTest(:)==Ytest(:))/length(Ytest);
+            accuracyTrain(10*(trail-1)+i,j) = sum(predTrain(:)==Ytest(:))/length(Ytest);
+
             clear cl;
 
         end
