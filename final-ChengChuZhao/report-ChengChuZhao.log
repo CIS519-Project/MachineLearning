@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.12)  8 DEC 2014 23:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.12)  8 DEC 2014 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -256,11 +256,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 96.
 \cv@tmpc@=\count109
 \cv@tmpc=\count110
 )
-(./report-ChengChuZhao.aux
-
-LaTeX Warning: Label `fig:HOG' multiply defined.
-
-)
+(./report-ChengChuZhao.aux)
 \openout1 = `report-ChengChuZhao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -278,7 +274,8 @@ LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 45.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -360,16 +357,11 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 83--84
  [][] 
  []
 
-
-Underfull \hbox (badness 1038) in paragraph at lines 89--91
-[]\OT1/ptm/m/n/10 Before we use HOG to ex-tract fea-tures from la-beled
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
-
- []
-
+<ROISelection.jpg, id=18, 353.82187pt x 408.77719pt>
+File: ROISelection.jpg Graphic file (type jpg)
+ <use ROISelection.jpg>
+Package pdftex.def Info: ROISelection.jpg used on input line 108.
+(pdftex.def)             Requested size: 195.126pt x 225.43317pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -378,112 +370,78 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<CornerDetection.jpg, id=27, 656.4525pt x 230.8625pt>
-File: CornerDetection.jpg Graphic file (type jpg)
-
-<use CornerDetection.jpg>
-Package pdftex.def Info: CornerDetection.jpg used on input line 95.
-(pdftex.def)             Requested size: 195.126pt x 68.62167pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
-
- []
-
-<circleDetection.jpg, id=35, 426.84468pt x 252.945pt>
-File: circleDetection.jpg Graphic file (type jpg)
-
-<use circleDetection.jpg>
-Package pdftex.def Info: circleDetection.jpg used on input line 104.
-(pdftex.def)             Requested size: 195.126pt x 115.63435pt.
- <ROISelection.jpg, id=37, 353.82187pt x 408.77719pt>
-File: ROISelection.jpg Graphic file (type jpg)
-
-<use ROISelection.jpg>
-Package pdftex.def Info: ROISelection.jpg used on input line 112.
-(pdftex.def)             Requested size: 195.126pt x 225.43317pt.
-
-Underfull \hbox (badness 1616) in paragraph at lines 118--119
-\OT1/ptm/m/n/10 HOG method can be im-ple-mented eas-ily with fewer
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-
- []
-
-[2 <./overview.jpg> <./CornerDetection.jpg> <./circleDetection.jpg> <./ROISelec
-tion.jpg>]
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no – in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
- <HOG.jpg, id=54, 459.21562pt x 142.28156pt>
+
+<HOG.jpg, id=35, 459.21562pt x 142.28156pt>
 File: HOG.jpg Graphic file (type jpg)
  <use HOG.jpg>
-Package pdftex.def Info: HOG.jpg used on input line 124.
+Package pdftex.def Info: HOG.jpg used on input line 118.
 (pdftex.def)             Requested size: 195.126pt x 60.45691pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `fig:HOGtest' on page 3 undefined on input line 129.
 
-<hogtest.jpg, id=55, 623.32875pt x 305.14pt>
+<hogtest.jpg, id=37, 623.32875pt x 305.14pt>
 File: hogtest.jpg Graphic file (type jpg)
  <use hogtest.jpg>
-Package pdftex.def Info: hogtest.jpg used on input line 133.
+Package pdftex.def Info: hogtest.jpg used on input line 127.
 (pdftex.def)             Requested size: 195.126pt x 95.51897pt.
+ [2 <./overview.jpg> <./ROISelection.jpg> <./HOG.jpg> <./hogtest.jpg>]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 
-<ROCgauss.jpg, id=63, 513.92pt x 385.44pt>
+<ROCgauss.jpg, id=59, 513.92pt x 385.44pt>
 File: ROCgauss.jpg Graphic file (type jpg)
  <use ROCgauss.jpg>
-Package pdftex.def Info: ROCgauss.jpg used on input line 170.
-(pdftex.def)             Requested size: 195.126pt x 146.34521pt.
- [3 <./HOG.jpg> <./hogtest.jpg>] <ROClinear.jpg, id=84, 513.92pt x 385.44pt>
-File: ROClinear.jpg Graphic file (type jpg)
- <use ROClinear.jpg>
-Package pdftex.def Info: ROClinear.jpg used on input line 177.
+Package pdftex.def Info: ROCgauss.jpg used on input line 164.
 (pdftex.def)             Requested size: 195.126pt x 146.34521pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--184
+<ROClinear.jpg, id=60, 513.92pt x 385.44pt>
+File: ROClinear.jpg Graphic file (type jpg)
+ <use ROClinear.jpg>
+Package pdftex.def Info: ROClinear.jpg used on input line 171.
+(pdftex.def)             Requested size: 195.126pt x 146.34521pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-<learningcurve.jpg, id=87, 513.92pt x 385.44pt>
+ [3 <./ROCgauss.jpg> <./ROClinear.jpg>] <learningcurve.jpg, id=83, 513.92pt x 3
+85.44pt>
 File: learningcurve.jpg Graphic file (type jpg)
- <use learningcurve.jpg>
-Package pdftex.def Info: learningcurve.jpg used on input line 193.
+
+<use learningcurve.jpg>
+Package pdftex.def Info: learningcurve.jpg used on input line 187.
 (pdftex.def)             Requested size: 195.126pt x 146.34521pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
-[4 <./ROCgauss.jpg> <./ROClinear.jpg> <./learningcurve.jpg>]
-<successfulResult.jpg, id=102, 593.21625pt x 241.65282pt>
+<successfulResult.jpg, id=85, 593.21625pt x 241.65282pt>
 File: successfulResult.jpg Graphic file (type jpg)
 
 <use successfulResult.jpg>
-Package pdftex.def Info: successfulResult.jpg used on input line 202.
+Package pdftex.def Info: successfulResult.jpg used on input line 196.
 (pdftex.def)             Requested size: 243.91124pt x 99.35852pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 202--203
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 196--197
  [][] 
  []
 
-<failedResult.jpg, id=103, 647.41875pt x 168.63pt>
+<failedResult.jpg, id=86, 647.41875pt x 168.63pt>
 File: failedResult.jpg Graphic file (type jpg)
  <use failedResult.jpg>
-Package pdftex.def Info: failedResult.jpg used on input line 209.
+Package pdftex.def Info: failedResult.jpg used on input line 203.
 (pdftex.def)             Requested size: 243.91124pt x 63.52942pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 209--210
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 203--204
  [][] 
  []
 
@@ -492,31 +450,28 @@ Underfull \hbox (badness 1546) in paragraph at lines 14--18
 []\OT1/ptm/m/n/10 Brown, Matthew, Szeliski, Richard, and Winder, Si-
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
- [5 <./successfulResult.jpg> <./failedResult.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
+[4 <./learningcurve.jpg> <./successfulResult.jpg> <./failedResult.jpg>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
+
+[5
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
  (./report-ChengChuZhao.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 239.
 Package rerunfilecheck Info: File `report-ChengChuZhao.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 246.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
  ) 
 Here is how much of TeX's memory you used:
- 6166 strings out of 493304
- 89502 string characters out of 6139871
- 183372 words of memory out of 5000000
- 9508 multiletter control sequences out of 15000+600000
+ 6148 strings out of 493304
+ 89156 string characters out of 6139871
+ 183233 words of memory out of 5000000
+ 9495 multiletter control sequences out of 15000+600000
  20305 words of font info for 37 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,11n,45p,1329b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,45p,1329b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/
@@ -529,10 +484,10 @@ y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on report-ChengChuZhao.pdf (5 pages, 699594 bytes).
+Output written on report-ChengChuZhao.pdf (5 pages, 543832 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 158 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
