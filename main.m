@@ -31,7 +31,7 @@ disp('Gaussian completed');
 tic
 clLinear = multiSVMfit(X_train,Ytrain,'Linear');
 toc
-disp('Linear completed');
+%disp('Linear completed');
 tic;
 %clPoly = multiSVMfit(X_train,Ytrain,'Poly');
 toc
